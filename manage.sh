@@ -1,6 +1,7 @@
 #!/bin/bash
 
-SB="$HOME/sandbox/sandbox"
+# SB="$HOME/sandbox/sandbox"
+SB="/home/tcoratger/Documents/AlgorandAtomic/sandbox/sandbox"
 GOAL="$SB goal"
 
 accts=(`$GOAL account list | awk '{print $3}'`)
@@ -17,7 +18,7 @@ initAcct(){
 }
 
 makeTeal() {
-    python3 contract.py
+    python3.11 contract.py
     $SB copyTo $app_name
     $SB copyTo $clear_name 
 }
